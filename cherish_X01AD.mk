@@ -22,21 +22,29 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/asus/X01AD/device.mk)
 
 # Inherit some common EvolutionOS stuff.
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 # Set shipping API level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Evo Flags
+# cherish Flags
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_BOOT_ANIMATION_RES := 720
+TARGET_USES_MINI_GAPPS := false
+TARGET_BUILD_WITH_LTO := true
+
+# Cherish Maintainer Flags
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.cherish.maintainer=Wayne
+CHERISH_BUILD_TYPE := UNOFFICIAL
 
 # Device identifiers.
-PRODUCT_NAME := evolution_X01AD
+PRODUCT_NAME := cherish_X01AD
 PRODUCT_DEVICE := X01AD
 PRODUCT_MANUFACTURER := asus
 PRODUCT_BRAND := asus
-PRODUCT_MODEL := ASUS_X01AD
+PRODUCT_MODEL := Revive Asus Max M2
 
 PRODUCT_GMS_CLIENTID_BASE := android-asus
 
